@@ -1,1 +1,184 @@
-# Pruebas
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Para Gaby🐢</title>
+
+  <style>
+    :root{
+      --pink:#ff4d8d;
+      --pink2:#ff76a8;
+      --bg1:#fff0f6;
+      --bg2:#ffe6ef;
+      --ink:#2b2b2b;
+      --card:#ffffffcc;
+      --shadow: 0 20px 60px rgba(0,0,0,.12);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background:
+        radial-gradient(1200px 800px at 20% 15%, var(--bg1), transparent 55%),
+        radial-gradient(900px 700px at 85% 25%, #fff7fb, transparent 60%),
+        radial-gradient(1100px 900px at 50% 90%, var(--bg2), transparent 55%),
+        linear-gradient(135deg, #fff, #ffeef5);
+      overflow:hidden;
+      color:var(--ink);
+    }
+
+    .wrap{
+      height:100%;
+      display:grid;
+      place-items:center;
+      padding:20px;
+    }
+
+    .card{
+      width:min(760px, 94vw);
+      background: var(--card);
+      border-radius:24px;
+      box-shadow: var(--shadow);
+      padding:28px;
+      position:relative;
+    }
+
+    .ribbon{
+      position:absolute;
+      top:16px;
+      right:-44px;
+      transform: rotate(10deg);
+      background: linear-gradient(90deg, var(--pink), var(--pink2));
+      color:white;
+      padding:10px 58px;
+      border-radius:999px;
+      font-weight:700;
+      z-index:5;
+      user-select:none;
+    }
+
+    h1{
+      margin:0 0 8px;
+      font-size:clamp(26px,4vw,40px);
+    }
+
+    .subtitle{
+      opacity:.8;
+      margin-bottom:18px;
+    }
+
+    .letter{
+      font-size:clamp(15px,2.1vw,18px);
+      line-height:1.55;
+      margin-bottom:16px;
+    }
+
+    .controls{
+      display:flex;
+      justify-content:center;
+      margin-top:18px;
+    }
+
+    .btn{
+      border:none;
+      border-radius:16px;
+      padding:14px 22px;
+      font-size:16px;
+      font-weight:800;
+      cursor:pointer;
+      transition: transform .12s ease, filter .12s ease;
+      background: linear-gradient(135deg, var(--pink), var(--pink2));
+      color:white;
+      box-shadow: 0 16px 30px rgba(255,77,141,.25);
+    }
+
+    .btn:hover{
+      filter:brightness(1.05);
+    }
+
+    .btn:active{
+      transform:scale(.98);
+    }
+
+    .footer{
+      margin-top:18px;
+      font-size:12px;
+      opacity:.7;
+      text-align:right;
+    }
+
+    /* Tortugas */
+    .turtle{
+      position:absolute;
+      font-size:32px;
+      opacity:.6;
+      animation: drift linear infinite;
+      user-select:none;
+      pointer-events:none;
+    }
+
+    @keyframes drift{
+      from{transform:translateX(-120px)}
+      to{transform:translateX(110vw)}
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="turtle" style="top:20%; animation-duration:22s;">🐢</div>
+  <div class="turtle" style="top:60%; animation-duration:28s;">🐢</div>
+
+  <div class="wrap">
+    <div class="card">
+      <div class="ribbon">San Valentín 🐢</div>
+
+      <h1>Gaby 🤍</h1>
+      <p class="subtitle">Le mando esta pequeña cartita</p>
+
+      <p class="letter">
+        Me alegro que hablemos de nuevo.
+        <br><br>
+        Me gusta compartir con usted, hablar, reírnos y molestarla un poquito 😌.
+        Le quería preguntar algo:
+      </p>
+
+      <p class="letter">
+        <b>¿Le gustaría que pasemos juntos San Valentín?</b><br>
+        <span style="opacity:.8">
+          si le parece planeamos juntos
+        </span>
+      </p>
+
+      <div class="controls">
+        <button class="btn" id="sendBtn">Enviar respuesta 💚</button>
+      </div>
+
+      <div class="footer">
+        con cariñito Daniel (no tengo eñe)
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const sendBtn = document.getElementById("sendBtn");
+
+    // Tu número en formato correcto para WhatsApp (sin +, sin espacios)
+    const MI_WHATSAPP = "50254104522";
+
+    sendBtn.onclick = () => {
+      const mensaje = ``;
+
+      const url = `https://wa.me/${MI_WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
+
+      window.open(url, "_blank");
+    };
+  </script>
+
+</body>
+</html>
